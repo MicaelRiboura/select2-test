@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select2 - Teste</title>
+
+    <!-- JQuery.js -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!-- Boostrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+        crossorigin="anonymous"></script>
+    <!-- Select2 -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-4">Select2</h1>
+        <div class="card">
+            <div class="card-header">
+                Select2 AJAX (Remote Data)
+            </div>
+            <div class="card-body">
+                <select id="mySelect2" class="js-data-example-ajax" style="width: 100%"></select>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $('#mySelect2').select2({
+            ajax: {
+                url: 'https://api.github.com/repositories',
+                // data: function (params) {
+                //     var query = {
+                //         q: params.term,
+                //     }
+                //     console.log('query: ', query);
+                //     // Query parameters will be ?search=[term]&type=public
+                //     return query;
+                // }
+                // processResults: function (data) {
+                //     console.log(data)
+                //     // Transforms the top-level key of the response object from 'items' to 'results'
+                //     return {
+                //         results: data.items
+                //     };
+                // }
+            }
+        });
+    </script>
+</body>
+</html>
